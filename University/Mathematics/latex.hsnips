@@ -1,0 +1,481 @@
+global
+function math(context) {
+    return context.scopes.some(s => s.startsWith("meta.math"));
+}
+endglobal
+
+
+
+snippet mk "Math" A
+$${1}$ $0
+endsnippet
+
+snippet dm "Display Math" A
+\[
+    ${1}
+\]
+$0
+endsnippet
+
+snippet textc "textcolor" wA
+\textcolor{${1}}{${2}}$0
+endsnippet
+
+snippet wolg "W.O.L.G." A
+W.O.L.G., $0
+endsnippet
+
+
+context math(context)
+snippet frac "Fraction" iAm
+\frac{${1}}{${2}}$0
+endsnippet
+
+context math(context)
+snippet wsub "Subscript" iAm
+_{${1}}$0
+endsnippet
+
+context math(context)
+snippet lim "Limit" iAm
+\lim\limits_{${1}}$0
+endsnippet
+
+context math(context)
+snippet sum "Summation" iAm
+\sum\limits_{${1}}^{${2}}$0
+endsnippet
+
+context math(context)
+snippet prod "Product" iAm
+\prod\limits_{${1}}^{${2}}$0
+endsnippet
+
+context math(context)
+snippet fd "FirstDerivative" iAm
+\frac{d}{dx}
+endsnippet
+
+context math(context)
+snippet wnd "NthDerivative" iAm
+\frac{d^{${1}}}{d^{${2}} x}$0
+endsnippet
+
+context math(context)
+snippet pderiv "PartialDerivative" iAm
+\frac{\partial }{\partial x}
+endsnippet
+
+context math(context)
+snippet npd "NthPartialDerivative" iAm
+\frac{\partial^{${1}} }{\partial^{${2}} x}$0
+endsnippet
+
+context math(context)
+snippet mspd "MixedSecondPartialDerivative" iAm
+\frac{\partial^{2} }{\partial x \partial y}
+endsnippet
+
+context math(context)
+snippet sqrt "SquareRoot" iAm
+\sqrt{${1}}$0
+endsnippet
+
+context math(context)
+snippet nr "NthRoot" iAm
+\sqrt[${1}]{${2}}$0
+endsnippet
+
+context math(context)
+snippet int "Integral" iAm
+\int_{${1}}^{${2}} f(x) \, dx$0
+endsnippet
+
+context math(context)
+snippet di "DoubleIntegral" iAm
+\iint_{D} f(x,y) \, dA$0
+endsnippet
+
+context math(context)
+snippet ti "TrippleIntegral" iAm
+\iiint_{V} \rho(x,y,z) \, dV$0
+endsnippet
+
+context math(context)
+snippet ci "CounterIntegral" iAm
+\oint_{C} \mathbf{F} \cdot d\mathbf{r}$0
+endsnippet
+
+context math(context)
+snippet pow "power" iAm
+^{${1}}$0
+endsnippet
+
+context math(context)
+snippet leq "leq" iAm
+\leq
+endsnippet
+
+context math(context)
+snippet geq "geq" iAm
+\geq
+endsnippet
+
+context math(context)
+snippet to "to" iAm
+\to
+endsnippet
+
+context math(context)
+snippet infty "Infinity" iAm
+\infty
+endsnippet
+
+context math(context)
+snippet quad "quad" iAm
+\quad
+endsnippet
+
+context math(context)
+snippet forall "ForAll" iAm
+\forall\,
+endsnippet
+
+context math(context)
+snippet exists "Exists" iAm
+\exists\,
+endsnippet
+
+context math(context)
+snippet win "In" iAm
+\in
+endsnippet
+
+context math(context)
+snippet abs "Absolute" iAm
+\left\vert ${1:${TM_SELECTED_TEXT}}\right\vert$0
+endsnippet
+
+context math(context)
+snippet so "Small o" iAm
+o\,\left(${1:${TM_SELECTED_TEXT}}\right)$0
+endsnippet
+
+context math(context)
+snippet sim "sim" iAm
+\sim
+endsnippet
+
+context math(context)
+snippet iff "iff" iAm
+\iff
+endsnippet
+
+context math(context)
+snippet peq "PinEqual" iAm
+&=
+endsnippet
+
+context math(context)
+snippet cos "Cosine" iAm
+\cos$0
+endsnippet
+
+context math(context)
+snippet sin "Sine" iAm
+\sin$0
+endsnippet
+
+context math(context)
+snippet tan "Tangent" iAm
+\tan\left(${1:${TM_SELECTED_TEXT}}\right)$0
+endsnippet
+
+context math(context)
+snippet cot "Cotangent" iAm
+\cot\left(${1:${TM_SELECTED_TEXT}}\right)$0
+endsnippet
+
+
+
+
+context math(context)
+snippet lrb "left( right)" iAm
+\left(${1:${TM_SELECTED_TEXT}}\right)$0
+endsnippet
+
+context math(context)
+snippet lrsb "left[ right]" iAm
+\left[${1:${TM_SELECTED_TEXT}}\right]$0
+endsnippet
+
+context math(context)
+snippet lrcb "left{ right}" iAm
+\left\\{${1:${TM_SELECTED_TEXT}}\right\\}$0
+endsnippet
+
+
+
+context math(context)
+snippet aa "alpha" iAm
+\alpha
+endsnippet
+
+context math(context)
+snippet bb "beta" iAm
+\beta
+endsnippet
+
+context math(context)
+snippet gg "gamma" iAm
+\gamma
+endsnippet
+
+context math(context)
+snippet GG "Gamma" iAm
+\Gamma
+endsnippet
+
+context math(context)
+snippet dd "delta" iAm
+\delta
+endsnippet
+
+context math(context)
+snippet DD "Delta" iAm
+\Delta
+endsnippet
+
+context math(context)
+snippet ee "epsilon" iAm
+\epsilon
+endsnippet
+
+context math(context)
+snippet EE "Epsilon" iAm
+\Epsilon
+endsnippet
+
+context math(context)
+snippet zz "zeta" iAm
+\zeta
+endsnippet
+
+context math(context)
+snippet ZZ "Zeta" iAm
+\Zeta
+endsnippet
+
+context math(context)
+snippet eta "eta" iAm
+\eta
+endsnippet
+
+context math(context)
+snippet tt "theta" iAm
+\theta
+endsnippet
+
+context math(context)
+snippet TT "Theta" iAm
+\Theta
+endsnippet
+
+context math(context)
+snippet ii "iota" iAm
+\iota
+endsnippet
+
+context math(context)
+snippet kk "kappa" iAm
+\kappa
+endsnippet
+
+context math(context)
+snippet lam "lambda" iAm
+\lambda
+endsnippet
+
+context math(context)
+snippet Lam "Lambda" iAm
+\Lambda
+endsnippet
+
+context math(context)
+snippet mu "mu" iAm
+\mu
+endsnippet
+
+context math(context)
+snippet nu "nu" iAm
+\nu
+endsnippet
+
+context math(context)
+snippet xx "xi" iAm
+\xi
+endsnippet
+
+context math(context)
+snippet XX "Xi" iAm
+\Xi
+endsnippet
+
+context math(context)
+snippet oo "omicron" iAm
+\omicron
+endsnippet
+
+context math(context)
+snippet pi "pi" iAm
+\pi
+endsnippet
+
+context math(context)
+snippet Pi "Pi" iAm
+\Pi
+endsnippet
+
+context math(context)
+snippet rho "rho" iAm
+\rho
+endsnippet
+
+context math(context)
+snippet sig "sigma" iAm
+\sigma
+endsnippet
+
+context math(context)
+snippet Sig "Sigma" iAm
+\Sigma
+endsnippet
+
+context math(context)
+snippet tau "tau" iAm
+\tau
+endsnippet
+
+context math(context)
+snippet ups "upsilon" iAm
+\upsilon
+endsnippet
+
+context math(context)
+snippet Ups "Upsilon" iAm
+\Upsilon
+endsnippet
+
+context math(context)
+snippet phi "phi" iAm
+\phi
+endsnippet
+
+context math(context)
+snippet Phi "Phi" iAm
+\Phi
+endsnippet
+
+context math(context)
+snippet chi "chi" iAm
+\chi
+endsnippet
+
+context math(context)
+snippet psi "psi" iAm
+\psi
+endsnippet
+
+context math(context)
+snippet Psi "Psi" iAm
+\Psi
+endsnippet
+
+context math(context)
+snippet omg "omega" iAm
+\omega
+endsnippet
+
+context math(context)
+snippet Omg "Omega" iAm
+\Omega
+endsnippet
+
+
+
+snippet def "Definition" rA
+\begin{definition}{${1:Title}}{${2:label}}
+    $0
+\end{definition}
+endsnippet
+
+snippet thm "Theorem" rA
+\begin{theorem}{${1}}{${2}}
+    $0
+\end{theorem}
+endsnippet
+
+snippet prop "Proposition" rA
+\begin{proposition}{${1:Title}}{${2:label}}
+    $0
+\end{proposition}
+endsnippet
+
+snippet lem "Lemma" rA
+\begin{lemma}{${1:Title}}{${2:label}}
+    $0
+\end{lemma}
+endsnippet
+
+snippet cor "corollary" rA
+\begin{corollary}{${1:Title}}{${2:label}}
+    $0
+\end{corollary}
+endsnippet
+
+snippet exp "Example" rA
+\begin{example}{${1:Title}}{${2:label}}
+    $0
+\end{example}
+endsnippet
+
+snippet proof "Proof" rA
+\begin{proof}{${1:MyExpColor}}
+    $0
+\end{proof}
+endsnippet
+
+snippet sol "Solve" rA
+\begin{solve}{${1:MyExpColor}}
+    $0
+\end{solve}
+endsnippet
+
+snippet enu "Enumerate" rA
+\begin{enumerate}[topsep=10pt, itemsep=5pt]
+    ${1}
+\end{enumerate}
+endsnippet
+
+snippet align "Align" rA
+\begin{align*}
+    $1
+\end{align*}
+endsnippet
+
+snippet remark "Remark" rA
+\begin{remark}
+    ${1}
+\end{remark}
+endsnippet
+
+snippet note "Note" rA
+\begin{note}
+    ${1}
+\end{note}
+endsnippet
+
+snippet ref "Reference" rA
+\ref{:${1}}
+endsnippet
+
