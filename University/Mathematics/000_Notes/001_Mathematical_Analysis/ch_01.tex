@@ -1,0 +1,205 @@
+\chapter{Truth Table and Proof by Contradiction}
+\section{Truth Table}
+
+We use the symbol $\neg$ to denote logical negation (``not''). We use the symbol $\land$ to denote logical conjunction (``and''). We use the symbol $\lor$ to denote the inclusive logical ``or,'' meaning the proposition $A \lor B$ is true if at least one of the propositions $A$ or $B$ is true. We use the symbol $\implies$ to denote logical implication (``implies''). In addition, we let $P$ and $Q$ be propositions in this chapter.
+
+\begin{example}{}{exp_1_1_1}
+    The conditional statement $P \implies Q$ means if $P$ is true then $Q$ \textbf{must} be true.
+\end{example}
+\begin{solve}{MyExpColor} % You must provide the color name here
+    \begin{center}
+        \begin{tabular}{c|c|c}
+             $P$ & $Q$ & $P \implies Q$ \\
+             \hline 
+             T & T & T \\
+             T & F & F \\
+             F & T & T \\
+             F & F & T
+        \end{tabular}
+        \captionof{table}{Truth table of $P \implies Q$}
+    \end{center}
+\end{solve}
+    \begin{note}
+        The implication \( P \implies Q \) is false only when \( P \) is true and \( Q \) is false, as this violates the conditional. When \( P \) is false, the implication is true regardless of \( Q \)'s truth value, often referred to as being \textbf{vacuously true}. This is because a false premise cannot lead to a false implication, as the condition \( P \) is not satisfied. \uwave{Another way to understand this is that having $P$ false does not contradict that $Q$ must be true if $P$ is true.}
+    \end{note}
+
+
+\begin{example}{}{exp_1_1_2}
+    The conditional statement $P\land Q$ is true only when $P$ and $Q$ are both true.
+\end{example}
+\begin{solve}{MyExpColor} % Remember to pass the color!
+    \begin{center}
+        \begin{tabular}{c|c|c}
+             $P$ & $Q$ & $P \land Q$ \\
+             \hline 
+             T & T & T \\
+             T & F & F \\
+             F & T & F \\
+             F & F & F
+        \end{tabular}
+        \captionof{table}{Truth table of $P \land Q$} % Requires \usepackage{caption}
+    \end{center}
+\end{solve}
+
+
+\begin{example}{}{exp_1_1_3}
+    The truth tables of $P \lor Q$, $\neg P \lor Q$, and $\neg Q \implies \neg P$.
+\end{example}
+\begin{solve}{MyExpColor} % Pass your color here
+    \begin{center}
+        \begin{tabular}{c|c|c}
+             $P$ & $Q$ & $P \lor Q$ \\
+             \hline 
+             T & T & T \\
+             T & F & T \\
+             F & T & T \\
+             F & F & F
+        \end{tabular}
+        % Use \captionof instead of \caption* since we are not in a table environment
+        \captionof{table}{Truth table of $P \lor Q$}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{c|c|c}
+             $P$ & $Q$ & $\neg P \lor Q$ \\
+             \hline 
+             T & T & T \\
+             T & F & F \\
+             F & T & T \\
+             F & F & T
+        \end{tabular}
+        \captionof{table}{Truth table of $\neg P \lor Q$}
+    \end{center}
+
+    \vspace{10pt} % Space between the two tables
+
+    \begin{center}
+        \begin{tabular}{c|c|c|c|c}
+             $P$ & $Q$ & $\neg P$ & $\neg Q$ & $\neg Q \implies \neg P$ \\
+             \hline 
+             T & T & F & F & T  \\
+             T & F & F & T & F \\
+             F & T & T & F & T \\
+             F & F & T & T & T
+        \end{tabular}
+        \captionof{table}{Truth table of $\neg Q \implies \neg P$}
+    \end{center}
+\end{solve}
+
+In examples \ref{:exp_1_1_1} and \ref{:exp_1_1_3}, we have shown the following theorem.
+
+\begin{theorem}{}{thm_1_1_1}
+    Suppose $P$ and $Q$ are propositions, we have
+    \begin{enumerate}
+        \item[$1.$] $P \implies Q$ is equivalent to $\neg P \lor Q$,
+        \item[$2.$] $P \implies Q$ is equivalent to $\neg Q \implies \neg P$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{\quad Contrapositive and Converse}{def_1_1_1}
+    We call the proposition $\neg Q \implies \neg P$ the \textbf{contrapositive} of the proposition $P \implies Q$. The proposition $Q \implies P$ is called the \textbf{converse} of the proposition $P\implies Q$.
+\end{definition}
+
+\begin{proposition}{}{prop_1_1_2}
+    Suppose $P$ is a proposition. Then $P \iff \neg (\neg P)$.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c|c|c}
+             $P$ & $\neg P$ & $\neg (\neg P)$\\
+             \hline 
+             T & F & T \\
+             F & T & F 
+        \end{tabular}
+        \caption*{Truth table of $\neg (\neg P)$}
+    \end{table}
+\end{proposition}
+
+The next proposition shows that $\land$ and $\lor$ are ``associative''.
+\begin{proposition}{}{prop_1_1_3}
+    Suppose $P, Q, R$ are propositions.  
+    \begin{enumerate}
+        \item[$1.$] $(P \land Q) \land R \iff P \land (Q \land R)$,
+        \item[$2.$] $(P \lor Q) \lor R \iff P \lor (Q \lor R)$.
+    \end{enumerate}
+\end{proposition}
+
+One can show the following useful equivalences.
+\begin{proposition}{}{prop_1_1_4}
+Suppose $P, Q, R$ are propositions. Then:
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item[$1.$] $P \land  Q\land R \iff (P \land Q) \land (P \land R)$,
+        \item[$2.$] $P \lor  Q\lor R \iff (P \lor Q) \lor(P \lor R)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}{}{prop_1_1_5}
+    Suppose $P, Q, R$ are propositions.
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item[$1.$] $P \land (Q \lor R) \iff (P\land Q) \lor (P \land R)$,
+        \item[$2.$] $P \lor (Q \land R) \iff (P\lor Q) \land (P \lor R)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}{}{thm_1_1_6}
+    Suppose $P, Q, R$ are propositions.
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item[$1.$] $\neg (P \land Q) \iff \neg P \lor \neg Q$,
+        \item[$2.$] $\neg (P \lor Q) \iff \neg P \land \neg Q$,
+        \item[$3.$] $\neg (P \implies Q) \iff (P \land \neg Q)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}{}{prop_1_1_7}
+    Suppose $P, Q, R$ are propositions. Then $P \lor Q \iff \neg P \implies Q$.
+\end{proposition}
+
+
+
+\section{Proof by Contradiction}\label{sec:1.2}
+The proof by contradiction is as follows. Suppose $R$ and $S$ are propositions, where we aim to prove $R$ true and know $S$ is false. We construct the following truth table for $\neg R \implies S$:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c|c|c|c}
+             $S$ & $R$ & $\neg R$ & $\neg R \implies S$ \\
+             \hline 
+             F & \textcolor{red}{T} & F & T 
+        \end{tabular}
+        \caption*{Truth table of ``Proof by Contradiction''}
+    \end{table}
+If we prove that $\neg R \implies S$ is true, then $\neg R$ is false, so $R$ is true. To make sense of this, see Example~\ref{:exp_1_1_1}.
+\begin{example}{}{exp_1_2_1}
+    Suppose $x,y \in \mathbb{Z}^{+}$ with $x + y < 99$. We claim that $x < 50$ or $y < 50$.
+\end{example}
+\begin{proof}{MyExpColor} % <--- Ensure the color name is here!
+    For the sake of contradiction, suppose $\neg [(x < 50) \lor (y < 50)]$; 
+    that is, suppose $x \geq 50$ and $y \geq 50$. Then $x+y \geq 100$, 
+    contradicting the assumption that $x+y < 99$. Hence, we must have 
+    $(x < 50) \lor (y < 50)$.
+\end{proof}
+\begin{note}
+    In the example, $\neg R$ is $\neg [(x < 50)\lor(y < 50)]$, and $S$ is $x+y \geq 99$. We know $S$ is false because it contradicts the given condition $x + y < 99$. Since $\neg R \implies S$ is true, $\neg R$ must be false. Thus, $R$ is true. 
+\end{note}
+
+\begin{proposition}{}{prop_1_2_1}
+    For propositions $P$ and $Q$, we have $\left[\neg (P \implies Q) \implies \neg P\right] \iff (P \implies Q)$. 
+\end{proposition}
+
+Proposition \ref{:prop_1_2_1} provides an alternative approach for proving statements by contradiction: Suppose we aim to prove $P \implies Q$. For contradiction, assume $\neg (P \implies Q)$, which is equivalent to $\neg (\neg P \lor Q)$. Thus, we assume $P \land \neg Q$. If we can show that $P \land \neg Q \implies \neg P$, then, since this leads to a contradiction (i.e., $P \land \neg P$), it follows that $P \land \neg Q$ is false. Consequently, $P \implies Q$ is true.
+
+
+
+\section{Exercises}
+\begin{question}
+    Write the truth table for $P \implies Q$.
+\end{question}
+
+\begin{question}
+    Prove from Proposition \ref{:prop_1_1_2} to Proposition \ref{:prop_1_1_5}, and Theorem \ref{:thm_1_1_6}.
+\end{question}
+
+\begin{question}
+    Give two different examples of proof by contradiction with distinct logic shown in Section \ref{sec:1.2}. 
+\end{question}

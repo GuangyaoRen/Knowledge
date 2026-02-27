@@ -1,0 +1,228 @@
+%%%%%%%%%% Preamble.tex %%%%%%%%%%%
+%%%%% TABLE OF CONTENTS (ToC) %%%%%
+% 0. BASIC
+% 1. TABLE OF CONTENTS (ToC) CUSTOMIZATION
+% 2. COLOR
+% 3. DOCUMENT STYLING 
+% 4. DATE
+% 5. TABLE FORMATTING
+% 6. BASIC MATH 
+% 7. MATH ALPHABETS & SYMBOLS
+% 8. CUSTOM ENVIRONMENTS AND STYLING
+% 9. CODING AND ALGORITHM RELATED
+
+% 0. BASIC
+\usepackage[utf8]{inputenc} 
+\usepackage[a4paper, total={6.5in, 10in}]{geometry} % total={total width, total height}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{booktabs}
+\pdfminorversion=7
+\usepackage{emptypage} % hide page number when page is empty
+\author{Guangyao Ren} % my name
+
+% 1. ToC CUSTOMIZATION
+% show the word 'Chapter' in ToC
+\usepackage{tocloft} 
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftchappresnum}{Chapter }
+\renewcommand{\cftchapaftersnum}{:}
+\renewcommand{\cftchapnumwidth}{6em}
+
+% 2. COLOR
+\usepackage[dvipsnames]{xcolor} % for text color 
+\usepackage{color,soul} % for highlighting text
+% my color for environments
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+\definecolor{MyDefColor}{RGB}{25, 118, 210}  % Deep Blue
+\definecolor{MyThmColor}{RGB}{198, 40, 40}   % Soft Red
+\definecolor{MyPropColor}{RGB}{0, 105, 92}   % Dark Teal
+\definecolor{MyLemColor}{RGB}{106, 27, 154}  % Purple
+\definecolor{MyCorColor}{RGB}{216, 67, 21}   % Deep Orange
+\definecolor{MyExpColor}{RGB}{66, 66, 66}    % Slate Gray
+
+% 3. DOCUMENT STYLING 
+\raggedbottom
+\usepackage{parskip} % no indent for paragraphs in the entire document
+\usepackage{fancyhdr} % for custom headers and footers
+% define a custom pagestyle called 'fancy'
+\fancypagestyle{fancy}{
+    \fancyhf{} 
+    \fancyhead[LE,RO]{\bfseries\thepage} % left-even, right-odd: page number
+    \fancyhead[LO]{\nouppercase\rightmark} % left-odd: current section title
+    \fancyhead[RE]{\nouppercase\leftmark} % right-even: current chapter title
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.0pt} % set to 0pt to remove the footer line
+}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot{} % No page number at the bottom
+    \renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{fancy} % apply the 'fancy' pagestyle to the entire document
+% horizontal rule
+\newcommand\hr{
+    \noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+\usepackage{lettrine} % for first letter larger
+% \usepackage{indentfirst} % indent first line after \section{}        
+\usepackage{tcolorbox} % for box  
+\usepackage[normalem]{ulem} % for squiggly (wavy) underline
+\usepackage{graphicx} % for inserting graphs
+\usepackage{pgfplots} % for drawings
+\pgfplotsset{compat=1.15} % for the pgfplots package
+\usepackage[hidelinks]{hyperref} % add link
+\usepackage{url}
+\usepackage{xurl} % \url{} change line
+% \pagestyle{empty} % removing headers, footers, and page numbers
+
+% 4. DATE
+\usepackage{datetime} % for today's date \today
+\newdateformat{mydate}{\monthname[\THEMONTH]\THEDAY, \THEYEAR} 
+
+% 5. TABLE FORMATTING
+\usepackage{array}   
+\usepackage{placeins} % for table place
+\usepackage{diagbox} % for diagonal table
+\usepackage[T1]{fontenc} % for table wider than text width
+\usepackage{mwe} % for table wider than text width
+\usepackage{multirow} % for table multi-rows
+\usepackage{caption} % for table caption
+\captionsetup{hypcap=false} % Disables the floating anchor warning
+
+% 6. BASIC MATH
+\usepackage{amsmath,amsthm, amsfonts} % for \tag \proof and \eqref macros 
+\usepackage{mathtools} % for aligning entries in a matrix
+\setcounter{MaxMatrixCols}{20} % for matrix more than 10 columns
+\usepackage{centernot} % for \centernot\in
+\usepackage{multicol} % for multiple choice questions
+% for enumerate with steps
+\usepackage{enumitem}
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+% for question counter
+\newcounter{questioncounter}                            
+\newenvironment{question}                               
+{\refstepcounter{questioncounter} \par \medskip         
+ \noindent \textbf{Question \thequestioncounter.}}      
+{\par \medskip}      
+% reset question counter at the beginning of each section
+\counterwithin{questioncounter}{section}
+% for unnumbered questions
+\newenvironment{question*}
+{\par \medskip
+ \noindent \textbf{Question.}}
+{\par \medskip}
+
+% 7. MATH ALPHABETS & SYMBOLS
+% Some shortcuts
+\usepackage{textalpha}
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+
+% \usepackage{cmbright} % other font
+\usepackage{mathalfa} % script-style fonts (e.g., calligraphic letters)
+\def\mathbi#1{\textbf{\em #1}} % for Math bold italic letters
+\usepackage{amssymb} % for write Expectation symbol E
+\DeclareMathOperator*{\argmin}{argmin} % for \argmin
+\DeclareMathOperator*{\argmax}{argmax} % for \argmax
+\usepackage{gensymb} % for typing degree
+\newcommand*{\Perm}[2]{{}^{#1}\!P_{#2}} % for permutation
+\newcommand*{\Comb}[2]{{}^{#1}C_{#2}} % for combination
+\usepackage{stix} % for independent symbol $\Vbar$
+\usepackage{extarrows} % long equal sign with text above and below
+\usepackage[overload]{empheq} % system of equations
+\usepackage{derivative} % for derivatives
+\usepackage{tikz} % \checkmark
+\usetikzlibrary{intersections, calc, fadings, arrows, positioning, shapes}
+\usetikzlibrary{arrows.meta,shapes.multipart}
+\tikzset{
+    set/.style={
+        minimum width=2.5cm,  % Horizontal dimension
+        minimum height=3.5cm, % Vertical dimension (Taller than wide for the visual)
+        draw,
+        ellipse, % IMPORTANT: Set back to ellipse
+        thick,
+        align=center
+    },
+    element/.style={
+        circle,
+        fill=black,
+        inner sep=1.5pt
+    }
+}
+
+
+% 8. CUSTOM ENVIRONMENTS AND STYLING
+\usepackage[most]{tcolorbox}
+\usepackage{caption} 
+% 8a. core style (parent/header)
+\tcbset{
+    castelstyle/.style={
+        enhanced, frame hidden, interior hidden, sharp corners, breakable,
+        overlay={
+            \draw[line width=2pt, #1] 
+                ([yshift=-2.2mm]frame.north west) -- (frame.south west);
+        },
+        coltitle=#1, fonttitle=\bfseries,
+        attach title to upper, after title={\quad\par\vspace{.1cm}},
+        left=10pt, right=5pt, top=5pt, bottom=0pt, 
+        separator sign none,
+        description font=\itshape\color{black},
+        after skip=.5cm, 
+    }
+}
+% theorem, definition, example, proposition, lemma
+\newtcbtheorem[number within=section]{theorem}{Theorem}{castelstyle=MyThmColor}{}
+\newtcbtheorem[number within=section]{definition}{Definition}{castelstyle=MyDefColor}{}
+\newtcbtheorem[number within=section]{example}{Example}{castelstyle=MyExpColor}{}
+\newtcbtheorem[use counter from=theorem]{proposition}{Proposition}{castelstyle=MyPropColor}{}
+\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}{castelstyle=MyLemColor}{}
+\newtcbtheorem[use counter from=theorem]{corollary}{Corollary}{castelstyle=MyCorColor}{}
+% 8b. proof & solve environments
+\tcbset{
+    bodybar/.style={
+        enhanced, frame hidden, interior hidden, sharp corners, breakable,
+        overlay={
+            \draw[line width=2pt, #1] 
+                (frame.north west) -- (frame.south west);
+        },
+        left=10pt, right=5pt, top=0pt, bottom=5pt, 
+        before skip=0pt,
+        after skip=.3cm, % Adds the 0.3cm space after the proof ends
+    }
+}
+% usage: \begin{proof}{MyThmColor}
+\renewenvironment{proof}[1]{
+    % This \vspace removes the 'after skip' of the preceding theorem so they touch
+    \vspace{-.3cm}
+    \begin{tcolorbox}[bodybar=#1]
+    \textit{Proof:} \par\smallskip 
+}{
+    \hfill\qed\end{tcolorbox}
+}
+% usage: \begin{solve}{MyExpColor}
+\newenvironment{solve}[1]{
+    % This \vspace removes the 'after skip' of the preceding example so they touch
+    \vspace{-.3cm}
+    \begin{tcolorbox}[bodybar=#1]
+    \textit{Solution:} \par\smallskip 
+}{
+    \hfill\qed\end{tcolorbox} 
+}
+% 8c. remarks & notes (standard spacing)
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newenvironment{note}[1][Note]
+{\par\vspace{10pt}\begin{quote}\textbf{#1:\quad}}{\end{quote}\vspace{.3cm}}
+
+% 9. CODING AND ALGORITHM RELATED
+\usepackage{minted} % for listings of Python
+\usepackage{algorithm} % for algorithm and pseudocode \begin{algorithm}
+\usepackage{algorithmic} % for algorithm and pseudocode \begin{algorithmic}

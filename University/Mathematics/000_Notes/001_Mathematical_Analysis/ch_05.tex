@@ -1,0 +1,757 @@
+\chapter{Orders of infinitesimals and infinities}
+\section{Order of an infinitesimal}
+We have studied the infinitesimal of a sequence, $\lim\limits_{n\to\infty}x_{n}=0$. Now let us have a look at the infinitesimal of a function, $\lim\limits_{x\to x_{0}}f(x) = 0$.
+
+\begin{definition}{\quad Infinitesimal of a Function}{def_5_1_1}
+ When $x\to x_{0}$, we have $f(x) \to 0$, that is $\lim\limits_{x\to x_{0}}f(x) = 0$, we say \uwave{when $x\to x_{0}$}, $f(x)$ is an infinitesimal. 
+\end{definition}
+
+\begin{note}
+    When we talk about a function infinitesimal, we cannot omit the underlined part. It is meaningless by only saying a function $f(x)$ is an infinitesimal.
+\end{note}
+
+Different infinitesimals approach zero with different speeds. How do we compare infinitesimals? In other words, how can we know which infinitesimal approaches zero in the fastest manner?
+
+\begin{definition}{\quad Higher-order Infinitesimal, Lower-order Infinitesimal, Bounded Quantity, Infifnitesimals of The Same Order, and Equivalent Infinitesimals}{def_5_1_2}
+When $x\to x_{0}$, $u(x), v(x)$ are two infinitesimals.
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item If $\lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)} = 0$, we say when $x\to x_{0}$, $u(x)$ is the \textbf{higher-order infinitesimal} of $v(x)$, denoted as 
+        \[
+        u(x) = o\bigl(v(x)\bigr), \quad (x\to x_{0}).
+        \]
+        Similarly, $v(x)$ is the \textbf{lower-order infinitesimal} of $u(x)$. 
+        \item If there exists $A > 0$, when $x \in \bigl\{ x \mid 0 < \vert x-x_{0}\vert < \rho\bigr\}$, we have $\bigl\vert \frac{u(x)}{v(x)}\bigr\vert \leq A$, then we say when $x\to x_{0}$, $\bigl\vert \frac{u(x)}{v(x)} \bigr\vert$ is a \textbf{bounded quantity}, denoted as
+        \[
+            u(x) = \mathcal{O}\bigl(v(x)\bigr), \quad (x\to x_{0}).
+        \]
+        \item If there exists $0 < a <  A < +\infty$, when $x\left\{x\mid 0 < \left\vert x-x_{0} \right\vert < \rho\right\}$, we have $0 < a < \left\vert \frac{u(x)}{v(x)}\right\vert < A <+\infty$, then we say when $x\to x_{0}$, $u(x)$ and $v(x)$ are \textbf{infinitesimals of the same order}, denoted as
+        \[
+            \lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)} = c \neq 0.
+        \]
+        \item If $\lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)}=1$, then we say when $x\to x_{0}$, $u(x)$ and $v(x)$ are \textbf{equivalent infinitesimals}, denoted as
+        \[
+            u(x) \sim v(x), \quad (x\to x_{0}).
+        \]
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Higher-order infinitesimal just means that the term goes to zero faster. A lower-order infinitesimal just means that the term goes to zero slower.
+\end{remark}
+
+\begin{example}{\quad Higher-order Infinitesimal}{exp_5_1_1}
+    \begin{align*}
+        \lim\limits_{x\to0} \frac{1-\cos x}{x} = \lim\limits_{x\to0}\frac{2\sin^{2}\frac{x}{2}}{x} = \lim\limits_{x\to0}\frac{x\cdot2\sin^{2}\frac{x}{2}}{4\cdot\left(\frac{x}{2}\right)^{2}} = 0.
+    \end{align*}
+    Therefore, we say $1-\cos x$ is an higher-order infinitesimal of $x$, denoted as 
+    \[
+        1-\cos x = o\bigl(x\bigr), \quad (x\to0).
+    \]
+\end{example}
+
+\begin{example}{\quad Higher-order Infinitesimal}{exp_5_1_2}
+    \begin{align*}
+        \lim\limits_{x\to0}\frac{\tan x - \sin x}{x^{2}} = \lim\limits_{x\to 0}\frac{\sin x}{\cos x}\cdot\frac{1-\cos x}{x^{2}} = \lim\limits_{x\to 0}\frac{\sin x}{x\cdot\cos x}\cdot\frac{1-\cos x}{x} = 0.
+    \end{align*}
+    Therefore, we say $\tan x-\sin x$ is an higher-order infinitesimal of $x^{2}$, denoted at
+    \[
+        \tan x - \sin x = o\bigl(x^{2}\bigr), \quad (x\to 0).
+    \]
+\end{example}
+
+\begin{example}{\quad Bounded Quantity}{exp_5_1_3}
+    We have $u(x) = x\sin \frac{1}{x}, v(x) = x, (x\to 0)$.
+    \begin{align*}
+        \left\vert \frac{u(x)}{v(x)}\right\vert = \left\vert \sin\frac{1}{x}\right\vert \leq 1.
+    \end{align*}
+    Therefore, we say when $x\to0$, $\left\vert \frac{x\sin\frac{1}{x}}{x} \right\vert $ is a bounded quantity, denoted as
+    \[
+        x\sin\frac{1}{x} = \mathcal{O}\left(x\right), \quad (x\to 0).
+    \]
+\end{example}
+
+\begin{example}{\quad Equivalent Infinitesimals}{exp_5_1_4}
+    We all know that $\lim\limits_{x\to0}\frac{\sin x}{x} = 1$ and it can be denoted as
+    \[
+        \sin x \sim x, \quad (x\to0); \quad \text{\,or\,}
+    \]
+    \[
+        \sin x \textcolor{red}{\,=\,} x + o\left(x\right), \quad (x\to0). 
+    \]
+    \begin{remark}
+        Recall that this $o\left(x\right)$, higher-order infinitesimal of $x$, as $x\to0$, means something that goes to zero faster than $x$.
+    \end{remark}
+\end{example}
+
+\begin{example}{\quad Equivalent Infinitesimals}{exp_5_1_5}
+    We know that $\lim\limits_{x\to0}\frac{1-\cos x}{\frac{1}{2}x^{2}} = \lim\limits_{x\to0}\frac{2\sin^{2}\frac{x}{2}}{2\cdot\left(\frac{x}{2}\right)^{2}} = 1$, and it can be denoted as
+    \[
+        1-\cos x \sim \frac{1}{2}x^{2}, \quad (x\to0); \text{\,or\,}
+    \]
+    \[
+    1-\cos x \textcolor{red}{\,=\,} \frac{1}{2}x^{2} +o\left(x^{2}\right).
+    \]
+\end{example}
+
+\begin{example}{\quad Equivalent Infinitesimals}{exp_5_1_6}
+    We know that $\lim\limits_{x\to0}\frac{\tan x - \sin x}{\frac{1}{2}x^{3}} = \lim\limits_{x\to0}\frac{\sin x}{x\cos x}\cdot\frac{1-\cos x}{\frac{1}{2}x^{2}} = 1$, and it can be denoted as  
+    \[
+        \tan x - \sin x \sim \frac{1}{2}x^{3}, \quad (x\to0); \text{\,or\,}
+    \]
+    \[
+        \tan x - \sin x \textcolor{red}{\,=\,} \frac{1}{2}x^{3} + o\left(x^{3}\right), \quad (x\to0).
+    \]
+\end{example}
+
+\begin{note}
+    Though the \textit{equivalent relation} between infinitesimals is very useful, but in some cases we need to be very careful when using. In example \ref{:exp_5_1_6}, indeed we have $\tan x \sim x, (x\to0)$ and $\sin \sim x, (x\to0)$, but they are not equal (missing some higher-order terms). So, if you substitute $\tan x$ and $\sin x$ by $x$ into the limit, the answer will be wrong.
+\end{note}
+
+\begin{remark}
+    W.O.L.G. function $v(x)$ will have the form of $\left(x-x_{0}\right)^{k}$, when discussing infinitesimal. That is we have $v(x) = \left(x-x_{0}\right)^{k}$. Because writing $v(x)$ in this form allows us to determine the order of the infinitesimal $u(x)$. 
+\end{remark}
+
+\begin{example}{\quad Infinitesimal}{exp_5_1_7}
+    As $x\to0^{+},\, \ln x \to -\infty$, then $\frac{-1}{\ln x}$ is an (positive) infinitesimal. What is the order of this infinitesimal $\frac{-1}{\ln x}$? We observe that for any $\alpha > 0,\, -\frac{1}{\ln x}$ is the \textbf{lower-order infinitesimal} of $x^{\alpha}$ that is $\lim\limits_{x\to0^{+}}-\frac{\frac{1}{\ln x}}{x^{\alpha}} = + \infty$. This means that no matter how small the $\alpha$ is, $-\frac{1}{\ln x}$ always goes to zero slower than $x^{\alpha}$. Denoted $-\frac{1}{\ln x} = o \left(1\right), \left(x \to 0^{+}\right)$, meaning $-\frac{1}{\ln x}$ is an infinitesimal.
+\end{example}
+
+\begin{example}{\quad Self-bounded Quantity}{exp_5_1_8}
+    When $x \to 0, \, u(x) = \sin \frac{1}{x}$ is a bounded equality, denoted $u(x) = \mathcal{O}\left(1\right),\,\left(x\to0\right)$. 
+\end{example}
+
+
+
+\section{Comparison of Infinities}
+\begin{definition}{\quad Infinity}{def_5_2_1}
+    If $\lim\limits_{x\to x_{0}}f(x) = \infty; (\pm \infty)$, then we say when $x\to x_{0},\, f(x)$ is a (positive or negative) \textbf{infinity}.
+\end{definition}
+
+\begin{definition}{\quad Higher-order Infinity, Lower-order Infinity, Bounded Quantity, Infinities of The Same Order, and Equivalent Infinities}{def_5_2_2}
+    When $x\to x_{0}$ $u(x),\,v(x)$ are both infinity:
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item If $\lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)} = \infty$, we say when $x\to x_{0},\,u(x)$ is the \textbf{higher-order infinity} of $v(x)$. Also, $v(x)$ is the \textbf{lower-order infinity} of $u(x)$.
+        
+        When study sequences, we have the following result
+        \[
+            n^{n} >> n! >> a^{n} >> n^{\alpha} >> \ln^{\beta}n, \quad\quad\quad a>1, \alpha >0, \beta > 0
+        \]
+        \item If $\exists\, A > 0$, for $\left\{x\mid 0 < \vert x-x_{0}\vert < \rho\right\}$, we have $\left\vert \frac{u(x)}{v(x)}\right\vert \leq A$, then we say when $x\to x_{0}, \left\vert\frac{u(x)}{v(x)}\right\vert$ is a \textbf{bounded quantity}, denoted as 
+        \[
+            u(x) = \mathcal{O}\left(v(x)\right), \quad (x\to x_{0}).
+        \]
+        \item If there exists $0 < a< A < +\infty$, for $\left\{x\mid 0< \left\vert x-x_{0} \right\vert < \rho\right\}$, we have $0 < a < \left\vert \frac{u(x)}{v(x)}\right\vert < A < +\infty$, then we say when $x\to x_{0}$, $u(x)$ and $v(x)$ are \textbf{infinities of the same order}, denoted as
+        \[
+            \lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)} = c \neq 0, \quad (x\to x_{0}).
+        \]
+        \item If $\lim\limits_{x\to x_{0}}\frac{u(x)}{v(x)} = 1$, then we say when $x\to x_{0}$, $u(x)$ are $v(x)$ are \textbf{equivalent infinities}, denoted as
+        \[
+            u(x) \sim v(x), \quad (x\to x_{0}).
+        \]
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Higher-order infinity means a term goes to infinity faster. Lower-order infinity means a term goes to infinity slower.
+\end{remark}
+
+\begin{remark}
+    W.O.L.G. function $v(x)$ will have the form of $\left(\frac{1}{x}\right)^{k}$, when discussing infinity.
+\end{remark}
+
+\begin{note}
+    It is a conversion that we do not use lower case $o$, when discussing infinities.
+\end{note}
+
+\begin{example}{\quad}{exp_5_2_1}
+    Given $u(x) = x^{3}\sin \frac{1}{x},  v(x) = x^{2}, x\to +\infty$.
+\end{example}
+
+\begin{solve}{MyExpColor}
+    It is easy to show that both $u(x)$ and $v(x)$ approaches infinity as $x$ goes to infinity.
+    \begin{align*}
+        \lim\limits_{x\to+\infty} \frac{u(x)}{v(x)} = \lim\limits_{x\to+\infty} \frac{x^{3}\sin \frac{1}{x}}{x^{2}} = \lim\limits_{x\to+\infty} \frac{x^{2}\sin \frac{1}{x}}{x^{2}\cdot\frac{1}{x}} = 1
+    \end{align*}
+    Therefore, $x^{3}\sin \frac{1}{x} \sim x^{2}, (x\to +\infty)$.
+\end{solve}
+
+\begin{example}{\quad}{exp_5_2_2}
+    Find $\lim\limits_{x\to\frac{\pi}{2}^{-}}\left(\frac{\pi}{2} - x\right)\tan x$.
+\end{example}
+
+\begin{solve}{MyExpColor}
+    Let $y=\frac{\pi}{2}-x$, then $\lim\limits_{x\to\frac{\pi}{2}^{-}}\left(\frac{\pi}{2} - x\right)\tan x = \lim\limits_{y\to 0^{+}}\left(y\cdot\cot y \right) = \lim\limits_{y\to 0^{+}}\left(y\cdot\frac{\cos y}{\sin y} \right) = 1$. Since $\lim\limits_{y\to0^{+}}\frac{y}{\sin y} =1$. This tells us, $\tan x \sim \frac{1}{\frac{\pi}{2}-x}, \left(x\to \frac{\pi}{2}^{-}\right)$.
+\end{solve}
+
+Next, we will prove that when $x \to 0^{+}, \frac{-1}{\ln x}$ is an lower-order infinitesimal to $x^{\alpha}, \forall\, \alpha > 0$.
+
+\begin{example}{\quad}{exp_5_2_3}
+    Show that when $x\to 0^{+}$ for any $k \in \mathbb{Z}^{+}$, $\left(\frac{-1}{\ln x}\right)^{k}$ is an lower-order infinitesimal to $x$.
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $y=-\ln x$, then $\lim\limits_{x\to 0^{+}}\frac{x}{\left(\frac{-1}{\ln x}\right)^{k}} = \lim\limits_{y\to+\infty}\frac{y^{k}}{e^{y}} = 0$. Since $e^{y}$ is an higher-order infinitesimal of $y^{k}$.
+\end{proof}
+
+\begin{example}{\quad}{exp_5_2_4}
+    When $x\to 0$, $e^{-\frac{1}{x}}$ is an higher-order infinitesimal of $x^{k}$.
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $y = \frac{1}{x}$, then $\lim\limits_{x\to 0^{+}}\frac{e^{-\frac{1}{x}}}{x^{k}} = \lim\limits_{y\to +\infty}\frac{y^{k}}{e^{y}} = 0$.
+\end{proof}
+
+\begin{remark}
+    We shall remember by heart some of the conclusions such as $x \to +\infty$, 
+    \[
+        e^{x} >> x^{k} >> \ln^{m} x.
+    \]
+\end{remark}
+
+
+
+\section{Equivalent Asymptotics}
+We introduce some important \textbf{equivalent asymptotics} by examples, other then example \ref{:exp_5_1_4}, which is  $\sin x \sim x, (x\to0)$.
+
+\begin{example}{\quad}{exp_5_3_1}
+    Show $\ln (1+x) \sim x$, when $x\to0$.
+\end{example}
+\begin{proof}{MyExpColor}
+    \begin{align*}
+        \lim\limits_{x\to0}\frac{\ln (1+x)}{x} = \lim\limits_{x\to0}\ln (1+x)^{\frac{1}{x}} = 1.
+    \end{align*}
+\end{proof}
+
+\begin{example}{\quad}{exp_5_3_2}
+    Show that $e^{x} - 1 \sim x$, when $x\to0$.
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $e^{x} -1 = y$,
+
+    \begin{align*}
+        \lim\limits_{x\to0}\frac{e^{x}-1}{x} = \lim\limits_{y\to0}\frac{y}{\ln (1+y)} = 1.
+    \end{align*}
+\end{proof}
+
+\begin{example}{\quad}{exp_5_3_3}
+    Show $(1+x)^{\alpha} - 1 \sim \alpha x, \forall\, \alpha \in \mathbb{R}$, when $x\to 0$.
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $y = (1+x)^{\alpha}-1$,
+
+    \begin{align*}
+        \lim\limits_{x\to0}\frac{(1+x)^{\alpha}-1}{x} = \lim\limits_{y\to0}\frac{y}{\ln (1+y)}\cdot \lim\limits_{x\to0}\frac{\alpha\ln (1+x)}{x} = \alpha.
+    \end{align*}
+\end{proof}
+
+\begin{example}{\quad}{exp_5_3_4}
+    For $u(x) = \sqrt{x+\sqrt{x}}$, when $x\to+\infty$, it is infinity and when $x\to0^{+}$, it is infinitesimal, but we need to know the order.
+\end{example}
+
+\begin{solve}{MyExpColor}
+    \begin{align*}
+        \lim\limits_{x\to+\infty}\frac{\sqrt{x+\sqrt{x}}}{\sqrt{x}} = \lim\limits_{x\to+\infty}\sqrt{1+\frac{1}{\sqrt{x}}} = 1.
+    \end{align*}
+    Therefore, $\sqrt{x+\sqrt{x}} \sim \sqrt{x}$, when $(x\to+\infty)$. Why we divided by $\sqrt{x}$? Because, compared to $x$, $\sqrt{x}$ is NOT the dominant component when $x+\sqrt{x}$ approaches positive infinity.
+    
+    \begin{align*}
+        \lim\limits_{x\to0^{+}}\frac{\sqrt{x+\sqrt{x}}}{x^{\frac{1}{4}}} = \lim\limits_{x\to0^{+}}\sqrt{1+\sqrt{x}} = 1.
+    \end{align*}
+    Therefore, $\sqrt{x+\sqrt{x}} \sim \sqrt[4]{x}$, when $x\to0^{+}$.
+\end{solve}
+
+\begin{example}{\quad}{exp_5_3_5}
+    Given $v(x) = 2x^{3} + 3x^{5}$, 
+    \begin{enumerate}
+        \item [1.] when $x\to+\infty$, $v(x) \sim 3x^{5}$, 
+        \item [2.] when $x\to0$, $v(x) \sim 2x^{3}$ .
+    \end{enumerate}
+\end{example}
+
+
+
+\section{Calculating Limits Using Equivalent Asymptotics}
+
+\begin{theorem}{}{thm_5_4_1}
+    Three functions $u(x), v(x), w(x)$ are defined on some punctured neighbourhood at $x_{0}$ and $\lim\limits_{x\to x_{0}} = \frac{v(x)}{w(x)}=1 \iff v(x) \sim w(x), x \to x_{0}$, then:
+
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item $\lim\limits_{x\to x_{0}} u(x)w(x) = A \iff \lim\limits_{x\to x_{0}} u(x)v(x) = A$, 
+        \item $\lim\limits_{ \to x_{0}}\frac{u(x)}{w(x)} = A \iff \lim\limits_{x\to x)_{0}}\frac{u(x)}{v(x)} = A$. 
+    \end{enumerate}       
+\end{theorem}
+
+\begin{example}{}{exp_5_4_1}
+    Calculate $\lim\limits_{x\to 0}\frac{\ln \left(1+x^{2} \right)}{\left(e^{2x}-1\right)\tan x}$ 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    Assume we know that $\ln\left(1+x^{2}\right) \sim x^{2}, x\to 0$. Alos, $e^{2x}-1 \sim 2x, x\to 0$, and $\tan x \sim x, x\to 0$, (These results will be left as exercises.). Then:
+
+    \begin{align*}
+        \lim\limits_{x\to 0}\frac{\ln\left(1+x^{2}\right)}{\left(e^{2x}-1\right)\tan x} =  \lim\limits_{x\to 0}{\frac{x^{2}}{2x\cdot x}} = \frac{1}{2}.
+    \end{align*}    
+\end{solve}
+
+\begin{example}{}{exp_5_4_2}
+    Calculate $\lim\limits_{x\to 0}\frac{\sqrt{1+x}-e^{\frac{x}{3}}}{\ln \left(1+2x\right)}$. 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    \begin{align*}
+        \lim\limits_{x\to 0}\frac{\left(\sqrt{1+x}-1\right)\left(e^{\frac{x}{3}}-1\right)}{2x} &\textcolor{red}{\,=\,} \lim\limits_{x\to 0}\frac{\left(\frac{x}{2}+ o\,(x)\right)-\left(\frac{x}{3}+o\,(x)\right)}{2x} \\
+        &= \lim\limits_{x\to 0}\frac{\frac{1}{6}x+o\,(x)}{2x} = \frac{1}{12}
+    \end{align*}
+\end{solve}
+
+\begin{remark}
+    The red equality is because:
+    \begin{align*}
+        &x\to 0, \quad \sqrt{1+x} - 1 \sim \frac{x}{2} \iff \sqrt{1+x}-1 = \frac{x}{2} +o\,(x) \\
+        &x\to 0, \quad e^{\frac{x}{3}}-1 \sim \frac{x}{3} \iff e^{\frac{x}{3}} - 1 = \frac{x}{3} + o\,(x)
+    \end{align*}
+\end{remark}
+
+\begin{example}{}{exp_5_4_3}
+    Calculate $\lim\limits_{x\to \infty}x\left(\sqrt[3]{x^{3}+x}-\sqrt[3]{x^{3}-x}\right)$. 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    \begin{align*}
+        \lim\limits_{x\to \infty} x\left(\sqrt[3]{x^{3}+x} - \sqrt[3]{x^{3}-x}\right) &= \lim\limits_{x\to \infty}x^{2}\left(\left(\sqrt[3]{1+\frac{1}{x^{2}}}-1\right)-\left(\sqrt[3]{x^{3}-\frac{1}{x^{2}}}-1\right)\right) \\
+        &\textcolor{red}{\,=\,} \lim\limits_{x\to \infty}\left[\left(\frac{1}{3x^{2}} +o\,\left(\frac{1}{x^{2}}\right)\right)-\left(-\frac{1}{3x^{2}}+o\,\left(\frac{1}{x^{2}}\right)\right)\right] \\
+        &= \lim\limits_{x\to \infty}\left(\frac{2}{3x^{2}+o\,\left(\frac{1}{x^{2}}\right)}\right) = \frac{2}{3}
+    \end{align*}
+\end{solve}
+
+\begin{remark}
+    The red equality is due to:
+    \begin{align*}
+        &x\to \infty, \quad \sqrt[3]{1+x}-1 = \frac{x}{3}+o\,(x) \\
+        &x\to \infty, \quad \sqrt[3]{1-x}+1 = -\frac{x}{3}+o\,(x)
+    \end{align*}
+    and view $\frac{1}{x^{2}}$ as $x$.   
+\end{remark}
+
+\begin{example}{}{exp_5_4_4}
+    Calculate $\lim\limits_{x\to 0}\cos\left(x\right)^{\frac{1}{x^{2}}}$. 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    \begin{align*}
+        \lim\limits_{x\to 0}\cos\left(x\right)^{\frac{1}{x^{2}}} &= \lim\limits_{x\to 0}\left[1-\big(1-\cos\left(x\right)\big)\right]^{\frac{1}{x^{2}}} \\
+        &\textcolor{red}{\,=\,} \lim\limits_{x\to 0}\left[\left(1-\frac{x^{2}}{2}\right)^{\frac{2}{x^{2}}}\right]^{\frac{1}{2}} \\
+        &= \left(\frac{1}{e}\right)^{\frac{1}{2}} = \frac{1}{\sqrt{e}}.
+    \end{align*}
+\end{solve}
+
+\begin{remark}
+    The red equality is due to:
+
+    \begin{align*}
+        x \to 0, \quad 1-\cos\left(x\right) = 2\sin^{2}\frac{x}{2} \sim \frac{x^{2}}{2}.
+    \end{align*}
+
+    We have encountered this question before, but we did not use equivalence to easily solve it.
+\end{remark}
+
+\begin{remark}
+    In example \ref{:exp_5_4_2} we use $\frac{x}{2}+o\,\left(x\right) = \sqrt{1+x}-1$, also in example \ref{:exp_5_4_3} we replace an infinitesimal with its equivalent and we always keep a $o\,\left(x\right)$ term. Why is this? We use next example to address this.   
+\end{remark}
+
+\begin{example}{}{exp_5_4_5}
+    Calculate $\lim\limits_{x\to 0}\frac{\tan\left(x\right)-\sin\left(x\right)}{x^{2}}$. 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    The wrong way to solve this is using the equivalence without the $o\,\left(x\right)$ term. It goes like:
+    
+    Since $\sin\left(x\right)\sim x$ and $\tan\left(x\right)\sim x$ then we have 
+    \begin{align*}
+        \lim\limits_{x\to 0}\frac{\tan\left(x\right)-\sin\left(x\right)}{x^{2}} = \lim\limits_{x\to 0}\frac{x-x}{x^{3}} = 0.
+    \end{align*}
+    We have calculated this limit before in example \ref{:exp_5_1_6}, we know $\lim\limits_{x\to 0}\frac{\tan\left(x\right)-\sin\left(x\right)}{x^{2}} = \frac{1}{2}$. The problem lies in omitting the $o\,\left(x\right)$ terms and the operation is \textcolor{red}{subtraction}. Regiously,
+    \begin{align*}
+        \sin\left(x\right) &= x + o\,\left(x\right), \\
+        \tan\left(x\right) &= x + o\,\left(x\right). \\
+        \lim\limits_{x\to 0}\frac{\tan\left(x\right)-\sin\left(x\right)}{x^{2}} &= \lim\limits_{x\to 0}\frac{\left(x-o\,\left(x\right)\right) - \left(x-o\,\left(x\right)\right)}{x^{3}} \\
+        &\textcolor{red}{\,=\,} \frac{o\,\left(x\right)}{x^{3}} \\
+        &= \textcolor{orange}{\,???}.
+     \end{align*}
+Though this method, keeping the $o\,\left(x\right)$ terms in calculation, we do not know the answer, but at least we avoid making mistakes. 
+\end{solve}
+
+\begin{remark}
+    In the red equality step, the $o\,\left(x\right)$ terms will not be cancled, since they are \uwave{different} higher order infinitesimals of $x$.  
+\end{remark}
+
+\begin{example}{}{exp_5_4_6}
+    Calculate $\lim\limits_{x\to 0}\frac{\left(\sqrt{1+x}-1\right)-\frac{x}{2}}{x^{2}}$. 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    Since $\sqrt{1+x}-1 \sim \frac{x}{2}$, then:
+    \begin{align*}
+        \lim\limits_{x\to 0}\frac{\left(\sqrt{1+x}-1\right)-\frac{x}{2}}{x^{2}} = \lim\limits_{x\to 0}\frac{\left(\frac{x}{2}+o\,\left(x\right)-\frac{x}{2}\right)}{x^{2}} = \lim\limits_{x\to 0}\frac{o\,\left(x\right)}{x^{2}}.
+    \end{align*} 
+    To this step, we know it is undetermined by using this method.
+    \begin{align*}
+        \lim\limits_{x\to 0}\frac{\left(\sqrt{1+x}-1\right)-\frac{x}{2}}{x^{2}} &= \lim\limits_{x\to 0}\frac{\left(1+x\right)-\left(1+\frac{x}{2}\right)^{2}}{x^{2}\left(\sqrt{1+x}+1+\frac{x}{2}\right)} \\
+        &= \lim\limits_{x\to 0}\frac{-\frac{1}{4}x^{2}}{x^{2}\left(\sqrt{1+x}+1+\frac{x}{2}\right)} = -\frac{1}{8}
+    \end{align*}
+\end{solve}
+
+\begin{note}
+    Later, we will see example \ref{:exp_5_4_6} tells us that $\sqrt{1+x} = 1 + \frac{x}{2} - \frac{1}{8}x^{2}+o\,\left(x^{2}\right), \quad x\to 0$.
+\end{note}
+
+
+
+\section{Continuous Function on A Closed Interval}
+
+Continuous functions on a closed interval process certain properties that continuous functions on an open interval do not necessarily have.
+
+\begin{theorem}{\quad Boundedness Theorem}{thm_5_5_1}
+    If a function $f\left(x\right)$ is continuous in $\left[a, b\right]$, then $f\left(x\right)$ is bounded in $\left[a, b\right]$.
+    \begin{remark}
+        A function $f\left(x\right)$ is continuous in $\left[a, b\right]$ means:
+        
+        \[
+            \lim\limits_{x\to x_{0}}f\left(x\right) = f\left(x_{0}\right), \quad \forall\, x_{0} \in \left[a, b\right].
+        \]
+        
+        The \textit{Boundedness Theorem} means that if $f\left(x\right)$ is continuous in $\left[a, b\right]$, then there exists a real number $M>0$, such that $\forall\,x \in \left[a, b\right]$, we have $\left\vert f\left(x\right)\right\vert\leq M$.   
+    \end{remark}
+\end{theorem}
+    
+\begin{proof}{MyThmColor}
+    We assume $f\left(x\right)$ is unbouned in $\left[a, b\right]$ and we want to find a contradiction. We divide $\left[a, b\right]$ into two parts, $\left[a, \frac{a+b}{2}\right]$ and $\left[\frac{a+b}{2}, b\right]$, then $f\left(x\right)$ is at least unbounded in one of them, denoted that interval as $\left[a_{1}, b_{1}\right]$. We divide $\left[a_{1}, b_{1}\right]$ into two parts, $\left[a_{1}, \frac{a_{1}+b_{1}}{2}\right]$ and $\left[\frac{a_{1}+b_{1}}{2}, b_{1}\right]$, then $f\left(x\right)$ is at least unbounded in one of them, denoted that interval as $\left[a_{2}, b_{2}\right]$. Keep repeating this process, we can get a sequence of \textit{nested intervals}, $\left\{\left[a_{n}, b_{n}\right]\right\}$, then $\exists\, \xi \in \left[a_{n}, b_{n}\right], \forall\, n$ and $\lim\limits_{n\to \infty}a_{n}=\lim\limits_{x\to \infty}b_{n}= \xi$. Since $\xi \in \left[a, b\right]$, $f\left(x\right)$ is continuous at $\xi$, by \textit{Local Boundedness Property}, theorem \ref{:thm_4_2_5}, $\exists\,\delta > 0, B > 0, \forall\, x \in O\left(\xi, \delta\right) \cap \left[a, b\right]$, we have $\left\vert f\left(x\right)\right\vert\leq B$. When $n$ is large enough, $\left[a_{n}, b_{n}\right] \subset O\left(\xi, \delta\right)\cap\left[a, b\right]$. Contradiction.
+\end{proof}
+
+\begin{note}
+    In other words, since $f\left(x\right)$ is continuous at $\xi$, which is the limit and is inside a sequence of \textit{nested intervals}, $\left\{\left[a_{n}, b_{n}\right]\right\}$ , by \textit{Local Boundedness Property}, theorem \ref{:thm_4_2_5}, we know $f\left(x\right)$ is (at least) bounded in the neighbourhood of $\xi \in \left[a_{n}, b_{n}\right]$. But we assumed $f\left(x\right)$ is unbounded in all $\left[a_{n}, b_{n}\right]$. Here, $O\left(\xi, \delta\right) = \left(\xi-\delta, \xi+\delta\right)$. 
+\end{note}
+
+\begin{remark}
+    An example that a function is countinous in an \uwave{open} interval is unbounded: $f\left(x\right)=\frac{1}{x}$ is continuous in $\left(0, 1\right)$. Obviously $f\left(x\right)$ is unbounded in $\left(0, 1\right)$. 
+\end{remark}
+        
+\begin{theorem}{\quad Extereme Value Theorem (EVT)}{thm_5_5_2}
+    If $f\left(x\right)$ is continuous in $\left[a, b\right]$, then $\exists\, \xi, \eta \in \left[a, b\right]$ such that $f\left(\xi\right) \leq f\left(x\right) \leq f\left(\eta\right), \forall\, x \in \left[a, b\right]$. 
+
+    \begin{remark}
+        In other words, if $f\left(x\right)$ is continuous in $\left[a, b\right]$, then $f\left(x\right)$ has minimum and maximum values in $\left[a, b\right]$. 
+    \end{remark}
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    Since $f\left(x\right)$ is continuous in $\left[a, b\right]$, we know $f\left(x\right)$ is bounded. The \textit{Boundedness Theorem}, theorem \ref{:thm_5_5_1}, tells us that such $f\left(x\right)$ is bounded above and below. That is $R_{f}=\left\{f\left(x\right)\mid x \in \left[a, b\right]\right\}$ is a bounded set. By the \textit{Completeness Axiom / Least Upper Bound Axiom / Supremum Property}, theorem \ref{:thm_3_2_1}, we can let $\alpha = \inf R_{f}, \beta = \sup R_{f}$. Now we just need to show that $\alpha, \beta, \in R_{f}$. We first prove $\exists\, \xi \in \left[a, b\right]$ such that $f\left(\xi\right) = \alpha$. Since $\alpha = \inf R_{f}$, $\forall\, x \in \left[a, b\right], f\left(x\right)\geq \alpha$. $\forall\, \epsilon > 0, \exists\, x \in \left[a, b\right]$ such that $f\left(x\right) < \alpha +\epsilon$. Let $\epsilon_{n}=\frac{1}{n}, \exists\, x_{n} \in \left[a, b\right]$ such taht $\alpha \leq f\left(x_{n}\right)< \alpha+\frac{1}{n}$. Here, $x_{n}$ is a bounded sequence which has a convergent subsequence (by Bolzano-Weierstrass Theorem \ref{:thm_3_7_6}). Let $x_{n_{k}} \to \xi \in \left[a, b\right]$, such that $\alpha \leq f\left(x_{n_{k}}\right) < \alpha + \frac{1}{n_{k}}$. As long as $k\to \infty$, we have $f\left(\xi\right) = \alpha$. Similarly, we can prove $\exists\, \eta \in \left[a, b\right]$ such that $f\left(x\right)=\beta$.      
+\end{proof}
+
+\begin{remark}
+    An example: $f\left(x\right)=\frac{1}{x}, x\in \left(0, 1\right), \alpha = \inf R_{f}=0, \beta=\sup R_{f}=1$, but there is NO $\xi, \eta \in \left(0, 1\right)$ such that $f\left(\xi\right)=0, f\left(\eta\right)=1$.  
+\end{remark}
+
+\begin{theorem}{\quad Bolzano's Theorem}{thm_5_5_3}
+    If $f\left(x\right)$ is continuous in $\left[a, b\right]$ and $f\left(a\right)f\left(b\right)<0$, then $\exists\, \xi \in \left(a, b\right)$ such that $f\left(\xi\right) = 0$. 
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    W.O.L.G., let $f\left(a\right)<0, f\left(b\right)>0$. Let $V=\left\{x \mid f\left(x\right)<0, x \in \left[a, b\right]\right\}$, so $a \in V, b \notin V; \xi = \sup V$. First we need to show $\xi \in \left(a, b\right)$. Since $f\left(a\right) <0$, by continuity, $\exists\, \delta_{1} > 0$ such that $f\left(x\right)<0, \forall\, x \in \left[a, a+\delta_{1}\right)$, also since $f\left(b\right)>0$, by continuity, $\exists\, \delta_{2}>0$ such that $\forall\, x \in \left(b-\delta_{2}, b\right]$. This is saying that numbers close to $a$ give $f$ negative value, while numbers close to $b$ gives $f$ positive value. So, $\xi \in \left(a, b\right)$. Second we need to prove $f\left(\xi\right)=0$. Let $x_{n} \in V, f\left(x_{n}\right)<0$. Alos, let $x_{n}\to\xi$, taht is $f\left(\xi\right)=\lim\limits_{n\to \infty}f\left(x_{n}\right)\leq 0$. [Of course $f\left(\xi\right)$ will not be greater than zero.] If $f\left(\xi\right)<0, \exists\, \delta > 0$ such that $f\left(x\right) < 0$ for $x \in \left(\xi-\delta, \xi+\delta\right)$. A contradiction with the definiton of $\xi$ being the supremum of the set $V$. Therefore, $f\left(\xi\right)=0$.                  
+\end{proof}
+
+\begin{note}
+    We can let $\xi = \sup V$, is due to the \textit{Completness Axiom}, since the set $V$ is bounded above.  
+\end{note}
+
+\begin{remark}
+    The \textit{Bolzano's theorem} is a special case (or corollary) of the \textit{Intermediat Value Theorem (IVT)}, which we will cover next.
+\end{remark}
+
+\begin{example}{}{exp_5_5_1}
+    Give a polynomial $p\left(x\right)=2x^{3}-3x^{2}-3x+2$, what can we say about its root(s)? 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    It is obvious that $p\left(-2\right)<0, p\left(0\right)>0, p\left(1\right)<0, p\left(3\right)>0$. It is not difficult to see that $p\left(x\right)$ has three real roots $\xi_{1}, \xi_{2}, \xi_{3}$ and by the \textit{Intermediate Value Theorem (IVT)}, theorem \ref{:thm_5_5_3}, we know that $\xi_{1} \in \left(-2, 0\right), \xi_{2} \in \left(0, 1\right), \xi_{3} \in \left(1, 3\right)$.   
+\end{solve}
+
+\begin{note}
+    Actually, $p\left(x\right) = 2\left(x+1\right)\left(x-\frac{1}{2}\right)\left(x-2\right)$. 
+\end{note}
+ 
+\begin{example}{}{exp_5_5_2}
+    Suppose $f\left(x\right)$ is continuous in $\left[a, b\right]$ and $f\left(\left[a, b\right]\right) \subset \left[a, b\right]$, then prove that $\exists\, \xi \in \left[a, b\right]$ such that $f\left(\xi\right)=\xi$. Here, $\xi$ is the \textbf{Fixed Point} of the continuous function $f\left(x\right)$.     
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $g\left(x\right)=f\left(x\right)-x$. To find the \textbf{fixed point} of $f$ is to find the zero of $g$. Since $f\left(\left[a, b\right]\right) \subset \left[a, b\right], a \leq f\left(x\right)\leq b, \forall\, x \in \left[a, b\right]$, then $g\left(a\right) \geq 0, g\left(b\right)\leq0$. First case, if $g\left(a\right)=0$, then $\xi=a$. Second case, if $g\left(b\right)=0$, then $\xi=b$. Third case, if $g\left(a\right)>0, g\left(b\right)<0$, then $\exists\, \xi \in \left(a, b\right)$ such that $g\left(\xi\right)=0$, that is $f\left(\xi\right)=\xi$. Let's see the graph of this question. 
+    
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = middle,
+                xmin = 0, xmax = 1.2,
+                ymin = 0, ymax = 1.2,
+                xtick = {0.4, 0.75, 1.0},
+                xticklabels = {$a$, $\xi$, $b$},
+                ytick = {0.4, 0.75, 1.0},
+                yticklabels = {$a$, $\xi$, $b$},
+                axis line style={-},
+                xlabel={}, ylabel={},
+                grid=none,
+                clip=false
+            ]
+                \draw[dashed, thick, gray] (axis cs:0.4,0.4) rectangle (axis cs:1.0,1.0);
+                \addplot[domain=0:1.1, dashed, thick, red] {x} node[right] {};
+                \addplot[thick, color=blue, smooth] coordinates {
+                    (0.4, 0.5)
+                    (0.5, 0.8)
+                    (0.75, 0.75) 
+                    (0.85, 0.65)
+                    (1.0, 1.0)
+                };
+                \draw[dashed] (axis cs:0.75,0) -- (axis cs:0.75,0.75);
+                \draw[dashed] (axis cs:0,0.75) -- (axis cs:0.75,0.75);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{proof}
+ 
+\begin{remark}
+    If $f\left(x\right)$ is continuous in $\left(a, b\right)$ and $f\left(\left(a, b\right)\right) \subset \left(a, b\right)$, determine whether $f$ has a \textbf{finxed point} in $\left(a, b\right)$? The answer is No. The counter example is $f\left(x\right) = \frac{x}{2}$, which is continuous on $\left(0, 1\right)$ and $f\left(\left(0, 1\right)\right) = \left(0, \frac{1}{2}\right) \subset \left(0,1\right)$, but $f\left(x\right)=\frac{x}{2}$ has no \textbf{fixed point} in $\left(0, 1\right)$.       
+\end{remark}
+
+\begin{theorem}{\quad Intermediate Value Theorem (IVT)}{thm_5_5_4}
+    If $f\left(x\right)$ is continuous on $\left[a, b\right]$, then it takes on every value between its minimum $m$ and its maximum $M$.    
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    By the \textit{Extereme Value Theorem (EVT)}, theorem \ref{:thm_5_5_2}, we know $\exists\, \xi, \eta \in \left[a, b\right], f\left(\xi\right)=m, f\left(\eta\right)=M$. W.O.L.G., let $\xi<\eta, \forall\, c \in \left(m, M\right)$. Let $g\left(x\right)=f\left(x\right)-c$, then $g\left(x\right)$ is continuous on $\left[\xi, \eta\right]$. Since $g\left(\xi\right)=f\left(\xi\right)-c=m-c<0$ and $g\left(\eta\right)=f\left(\eta\right)-c=M-c>0$, then $\exists\, \zeta \in \left(\xi, \eta\right)\subset \left[a, b\right]$ such that $g\left(\zeta\right) = 0$ that is $f\left(\zeta\right) = c$.       
+\end{proof}
+
+\begin{remark}
+    The \textit{IVT} can make the proof of the \textit{Continuity of The Inverse Function Theorem}, theorem \ref{:thm_4_11_2}, much easier.  
+\end{remark}
+
+
+
+\section{Uniform Continuity}
+First let's review the concept of continuity. Suppose $X$ is an interval and $f\left(x\right)$ is continuous on $X$ that is $f\left(x\right)$ is continuous on every point in $X$ (right-continuous at the left ennd and left-continuous at the right end). Mathematicall, 
+
+\[
+    \forall\, x_{0} \in X, \forall\, \epsilon >0, \forall\, x \in \left\vert x-x_{0}\right\vert<\delta: \quad \left\vert f\left(x\right)-f\left(x_{0}\right)\right\vert<\epsilon.
+\]
+
+\begin{remark}
+    Here, $\delta$ is a function of $x_{0}$ and $\delta$ that is $\delta=\delta\left(x_{0}, \epsilon\right)$. \uwave{The first question is can we find a $\delta$ (positive of course) that works for all $x_{0}$? In other words, can we find a $\delta$ that only depends on $\epsilon$ that is $\delta=\delta\left(\epsilon\right)$?} (The answer is yes, we can.) If we can find that $\delta$ (only depends on $\epsilon$), then we can write:
+    
+    \[
+        \forall\, \epsilon>0, \exists\, \delta=\delta\left(\epsilon\right)>0, \forall\, x^{\prime}, x^{\prime\prime}\in \left\vert x^{\prime}-x^{\prime\prime}\right\vert<\delta: \quad \left\vert f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right\vert < \epsilon.
+    \]
+
+    The difference between the new mathematical form and the previous one is $x^{\prime}, x^{\prime\prime}$ and $x, x_{0}$. Though they are all any arbitrary points on $X$, the key difference is whether the choise of $\delta$ depends on the \uwave{arbitrary} pick of $x_{0}$.  
+\end{remark}  
+
+\begin{remark}
+    The second question is that can we \uwave{always} find that $\delta$ (only depends on $\epsilon$)? The answer is NO. Actually, whether we can find this $\delta(\epsilon)$ depends on the interval $X$ and also the function $f$.  
+    
+    Previously, when we dealing with $\delta\left(x_{0}, \epsilon\right)$, we say there is no need to find the largest $\delta\left(x_{0}, \epsilon\right)$, which is true. But for $\delta\left(\epsilon\right)$, indeed we need to find the largest $\delta\left(x_{0},\epsilon\right)$. That is
+    \[
+        \exists\, \delta\left(\epsilon\right)   \iff    \inf_{x_{0}\in X} \delta^{*}\left(x_{0},\epsilon\right) > 0.
+    \]
+    Here, we define the largest $\delta\left(x_{0}, \epsilon\right)$ or its supremum to be $\delta^{*}\left(x_{0},\epsilon\right)$. Also, we are taking the infimum over $x_{0}$, so when the condition is satisfied $\delta$ will only dependes on $\epsilon$. 
+\end{remark}
+
+\begin{definition}{\quad Uniform Continuity}{def_5_6_1}
+    Let $f\left(x\right)$ be a function defined on an interval $X \subseteq \R$. We say $f\left(x\right)$ is \textbf{uniformly continuous} on $X$. if $\forall\,\epsilon>0, \exists\,\delta>0$ such that $\forall\, x^{\prime}, x^{\prime\prime}\in X$, the condition $\left\vert x^{\prime} - x^{\prime\prime} \right\vert< \delta \implies \left\vert f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right\vert < \epsilon.$ 
+\end{definition}
+
+\begin{remark}
+    If we replace $x^{\prime}$ or $x^{\prime\prime}$ with $x_{0}$, we get the definition of continuity of $f\left(x\right)$ on $x_{0}$. Therefore, we know:
+    \[
+        f\left(x\right) \text{ is } \textbf{ uniformly continuous } \text{ on } X \implies f\left(x\right) \text{ is } \textbf{ continuous } \text{ on } X. 
+    \]     
+\end{remark}
+
+\begin{example}{}{exp_5_6_1}
+    Prove that $y=\sin\left(x\right)$ is uniformly continuous on $\left(-\infty, +\infty\right)$.
+\end{example}
+
+\begin{proof}{MyExpColor}
+    We have 
+    \begin{align*}
+        \left\vert \sin\left(x^{\prime}\right) - \sin\left(x^{\prime\prime}\right)\right\vert = 2\left\vert \cos \frac{x^{\prime}+x^{\prime\prime}}{2}\sin\frac{x^{\prime}-x^{\prime\prime}}{2}\right\vert \textcolor{red}{\,\leq\,} \left\vert x^{\prime}-x^{\prime\prime}\right\vert.
+    \end{align*}
+    Then $\forall\, \epsilon>0$, let $\delta\left(\epsilon\right)=\epsilon$, $\forall\, x^{\prime}, x^{\prime\prime}$, the conditoin $\left\vert x^{\prime}-x^{\prime\prime}\right\vert<\delta \implies \left\vert \sin x^{\prime}-\sin x^{\prime\prime}\right\vert\leq\left\vert x^{\prime}-x^{\prime\prime}\right\vert<\epsilon$. Therefore, $y=\sin x$ is uniformly continuous in $\R$. 
+\end{proof}
+
+\begin{note}
+    The red inequality is due to $\left\vert \cos x\right\vert \leq 1$, $\left\vert \sin x\right\vert\leq\left\vert x\right\vert$ (using graph to see this).      
+\end{note}
+ 
+\begin{example}{}{exp_5_6_2}
+    Is $f\left(x\right)=\frac{1}{x}$ uniformly continuous on $X=\left(0,1\right)$? 
+\end{example}
+
+\begin{solve}{MyExpColor}
+    Let $x_{0}\in \left(0,1\right)$ then we want to find $\delta^{*}(x_{0},\epsilon)$. 
+    \begin{align*}
+        \left\vert \frac{1}{x}-\frac{1}{x_{0}}\right\vert< \epsilon &\iff -\epsilon+\frac{1}{x_{0}<\frac{1}{x}}<\epsilon+\frac{1}{x_{0}} \iff \frac{x_{0}}{1+x_{0}\epsilon}<x<\frac{x_{0}}{1-x_{0}\epsilon} \\
+        &\iff -\frac{x_{0}^{2}\epsilon}{1+x_{0}\epsilon} < x-x_{0} < \frac{x_{0}^{2}\epsilon}{1-x_{0}\epsilon}.
+    \end{align*} 
+    Then $\delta^{*}\left(x_{0}, \epsilon\right) = \min \left\{\frac{x_{0}^{2}\epsilon}{1+x_{0}\epsilon}, \frac{x_{0}^{2}\epsilon}{1-x_{0}\epsilon}\right\} = \frac{x_{0}^{2}\epsilon}{1+x_{0}\epsilon}$. Obviously, the $\inf\limits_{x_{0}\in\left(0,1\right)}\frac{x_{0}^{2}\epsilon}{1+x_{0}\epsilon} = 0$, so we can not find a $\delta\left(\epsilon\right) > 0$ that is irrevalent to $x_{0}$. Therefore $f\left(x\right)=\frac{1}{x}$ is not unifromly continuous on $\left(0,1\right)$.       
+\end{solve}
+
+\begin{remark}
+    The readers may also feel that to tell if a function is uniformly continuous is not easy, even when the function $f\left(x\right)=\frac{1}{x}$ is not complicated at all. Imagine we had a complicated funciton ... Next thereom comes handy in telling if a function is uniformly continuous.
+\end{remark}
+
+\begin{theorem}{\quad Sequential Criterion for Uniform Continuity}{thm_5_6_1}
+    Let $f$ be a function defined on a set $X \subseteq \mathbb{R}$. Then $f$ is uniformly continuous on $X$ if and only if for every pair of sequences $\{x_n'\}$ and $\{x_n''\}$ in $X$, 
+
+    \[
+        \lim_{n \to \infty} (x_n' - x_n'') = 0 \implies \lim_{n \to \infty} (f(x_n') - f(x_n'')) = 0.
+    \]
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    Necessity ($\Rightarrow$)
+
+    Since $f\left(x\right)$ is uniformly continuous on $X$, then we have 
+
+    \[
+        \uwave{\forall\, \epsilon>0}, \exists\,\delta>0, \forall\, x^{\prime}, x^{\prime\prime} \in X, \quad \left\vert x^{\prime}-x^{\prime\prime}\right\vert <\delta \implies \left\vert f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right\vert<\epsilon.
+    \] 
+    Given $\lim\limits_{x\to\infty}\left(x_{n}^{\prime}-x_{n}^{\prime\prime}\right)=0$, then
+    
+    \[
+        \text{ to the same } \delta>0, \uwave{\exists\, N, \forall\, n>N}:\uwave{\left\vert x_{n}^{\prime}-x_{n}^{\prime\prime}\right\vert < \delta} \implies \uwave{\left\vert f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right)\right\vert < \epsilon}.
+    \]
+    Therefore, $\lim\limits_{n\to \infty}\left(f\left(x_{n}^{\prime}\right) - f\left(x_{n}^{\prime\prime}\right)        \right) = 0.$ 
+
+    Sufficiency ($\Leftarrow$)
+
+    We prove the statement by prove its \textit{countrapositive} statement, or \textit{proof by contraposition}. 
+
+    For the sufficiency direction, the original statement is if 
+
+    \[
+        \lim_{n \to \infty} (x_n' - x_n'') = 0 \implies \lim_{n \to \infty} (f(x_n') - f(x_n'')) = 0.
+    \]
+    then $f\left(x\right)$ is uniformly continuous on $X$. Its countrapositive statement is:
+
+    If $f\left(x\right)$ is NOT uniformly continuous on $X$, then 
+
+    \[
+        \uwave{\exists\, \epsilon_{0}>0}, \forall\, \delta>0, \exists\, x^{\prime}, x^{\prime\prime} \in X, \quad \left\vert x^{\prime}-x^{\prime\prime}\right\vert<\delta \implies \left\vert f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right\vert \geq \epsilon_{0}.
+    \]
+    
+    Let $\delta=\delta_{n}=\frac{1}{n}, \exists\, x_{n}^{\prime}, x_{n}^{\prime\prime} \in X$, the condition
+    
+    \[
+        \left\vert x_{n}^{\prime}-x_{n}^{\prime\prime}\right\vert \leq \frac{1}{n} \to 0 \implies \left\vert f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right)\right\vert\geq\epsilon_{0}.
+    \]
+    
+    Therefore, indeed the condition $\lim\limits_{n\to \infty}\left(x^{\prime}-x^{\prime\prime}\right)=0$ holds, but $\lim\limits_{n\to \infty}\left(f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right)\right) \neq 0$. The contrapostive statement is true so the original sufficieny direction holds.
+
+    For example $f\left(x\right)=\frac{1}{x}, X=\left(0,1\right)$, let $x_{n}^{\prime}=\frac{1}{n}, x_{n}^{\prime\prime}=\frac{1}{2n}$ then $x_{n}^{\prime} - x_{n}^{\prime\prime}=\frac{1}{2n}\to 0$, but $f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right)=-n \not\to 0$.
+\end{proof}
+
+\begin{remark}
+    The proof of theorem \ref{:thm_5_6_1}, in both directions, is just the rewrite of the definition of limit, so it is common to feel that we proved nothing, when we finishe our proof.
+\end{remark}
+
+\begin{note}
+    \begin{enumerate}[topsep=10pt, itemsep=5pt]
+        \item One thing to point out is that for funciton $f\left(x\right)=\frac{1}{x}$, the point $0$ is the problem, preventing it to be uniformly continuous.  
+        \item \textit{Proof by contraposition} is different from \textit{proof by contradiction}.
+    \end{enumerate}
+\end{note}
+
+\begin{example}{}{exp_5_6_3}
+    Let $f\left(x\right)=\frac{1}{x}, X=[\eta, 1), \eta \in \left(0,1\right)$. Prove $f\left(x\right)$ is uniform continuous on $X$.   
+\end{example}
+
+\begin{proof}{MyExpColor}
+    \begin{align*}
+        \forall\, \epsilon>0, \left\vert \frac{1}{x^{\prime}}-\frac{1}{x^{\prime\prime}}\right\vert = \frac{\left\vert x^{\prime}-x^{\prime\prime}\right\vert}{\left\vert x^{\prime}x^{\prime\prime}\right\vert}\leq\frac{\left\vert x^{\prime}-x^{\prime\prime}\right\vert}{\eta^{2}} 
+    \end{align*}
+    Let $\delta=\eta^{2}\epsilon>0, \forall\, x^{\prime}, x^{\prime\prime}\in [\eta, 1), \left\vert x^{\prime}-x^{\prime\prime}\right\vert<\delta$ then 
+    
+    \[
+        \left\vert \frac{1}{x^{\prime}}-\frac{1}{x^{\prime\prime}}\right\vert = \frac{\left\vert x^{\prime}-x^{\prime\prime}\right\vert}{\left\vert x^{\prime}x^{\prime\prime}\right\vert}\leq\frac{\left\vert x^{\prime}-x^{\prime\prime}\right\vert}{\eta^{2}} < \frac{\eta^{2}\epsilon}{\eta^{2}}< \epsilon.
+    \] 
+
+    Here, $\delta=\eta^{2}\epsilon$ is NOT related to $x_{0}$.  
+\end{proof}
+
+\begin{remark}
+    The use of $\eta$ here is to make sure that the domain $X$ is not too close to $0$, which causes major problem for uniform continuity. By not too close to $0$, we mean that for some fixed (or choosen) $\eta$, it can be very close to $0$, since $\eta \in \left(0, 1\right)$, but it will not be asymptotically close to $0$, when it is choosen. In other words, Because $\eta$ is a fixed (though potentially very small) positive number, the function $f(x)$ now has a maximum possible slope on that specific interval. Because the domain is $[\eta, 1)$: Once $\eta$ is chosen, the "danger zone" is capped. The function is "prevented" from getting asymptotically close to its singularity during the proof of that specific set.   
+\end{remark}
+
+\begin{example}{}{exp_5_6_4}
+    Prove $f\left(x\right)=x^{2}$ is NOT uinformly continuous on $[0, +\infty)$. 
+\end{example}
+
+\begin{proof}{MyExpColor}
+    Let $x_{n}^{\prime} = \sqrt{n+1}, x_{n}^{\prime\prime}=\sqrt{n}$, then $x_{n}^{\prime}-x_{n}^{\prime\prime}= \sqrt{n+1}-\sqrt{n}\to 0$, but $f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right) = 1 \not\to 0$.   
+\end{proof}
+
+\begin{example}{}{exp_5_6_5}
+    Prove $f\left(x\right)=x^{2}$ is uniformly continuous on $\left[0, A\right], A \in \R^{+}$.  
+\end{example}
+
+\begin{proof}{MyExpColor}
+    \begin{align*}
+        \forall\, \epsilon>0, \left\vert (x^{\prime})^{2}-(x^{\prime\prime})^{2}\right\vert = \left\vert x^{\prime}-x^{\prime\prime}\right\vert \left\vert x^{\prime}+x^{\prime\prime}\right\vert \leq 2A\left\vert x^{\prime}-x^{\prime\prime}\right\vert.
+    \end{align*}
+    Let $\delta=\frac{\epsilon}{2A}>0,\forall\,x^{\prime}, x^{\prime\prime} \in \left[0, A\right]$, the condition $\left\vert x^{\prime}-x^{\prime\prime}\right\vert<\delta \implies \left\vert (x^{\prime})^{2}-(x^{\prime\prime})^{2}\right\vert < \epsilon$. 
+\end{proof}
+
+\begin{theorem}{\quad Cantor Theorem}{thm_5_6_2}
+    If a function $f\left(x\right)$ is continuous on a closed interval $\left[a, b\right]$, then $f\left(x\right)$  is uniformly continuous on $\left[a, b\right]$. 
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    We proof theorem \ref{:thm_5_6_2} by contradiction. That is if a function $f\left(x\right)$ is continuous on a closed interval $\left[a, b\right]$, then $f\left(x\right)$  is NOT uniformly continuous on $\left[a, b\right]$.
+    Mathematically, it is
+    \[
+        \exists\, x_{n}^{\prime}, x_{n}^{\prime\prime} \in \left[a, b\right], \left\vert x_{n}^{\prime}-x_{n}^{\prime\prime}\right\vert < \frac{1}{n}, \text{ but } \left\vert f\left(x_{n}^{\prime}\right)-f\left(x_{n}^{\prime\prime}\right)\right\vert \geq \epsilon_{0}.
+    \]
+    Since $\left\{x_{n}^{\prime}\right\}$ is a bounded sequence, it must has a convergent subsequence, let $\lim\limits_{k\to \infty}x_{n_{k}}^{\prime}=\xi \in \left[a, b\right]$. From $\left\vert x_{n_{k}}^{\prime}-x_{n_{k}}^{\prime\prime}\right\vert<\frac{1}{x_{n_{k}}}$, we know $\lim\limits_{k\to \infty}x_{n_{k}}^{\prime\prime} = \xi$. Since $f\left(x\right)$ is continuous on $\xi$, then $\lim\limits_{k\to \infty}f\left(x_{n_{k}}^{\prime}\right) = \lim\limits_{k\to \infty} f\left(x_{n_{k}}^{\prime\prime}\right) = f\left(\xi\right)$. Thus, $f\left(x_{n_{k}}^{\prime}\right)-f\left(x_{n_{k}}^{\prime\prime}\right) \xrightarrow{k \to \infty} 0$. Contradiction.    
+\end{proof}
+
+\begin{theorem}{}{thm_5_6_3}
+    Let $f\left(x\right)$ be a fucntion that is continuous on an finite open interval $\left(a, b\right)$, then $f\left(x\right)$ is uniformly continuous on the open interval $\left(a, b\right)$ if and only if:
+    
+    \[
+        \lim\limits_{x\to a^{+}}f\left(x\right) = f\left(a^{+}\right), \text{ and } \lim\limits_{x\to b^{-}}f\left(x\right) = f\left(b^{-}\right) \text{ both exist and are finite}.
+    \]
+\end{theorem}
+
+\begin{proof}{MyThmColor}
+    Sufficiency $\left(\Leftarrow\right)$   
+    
+    Let $f\left(a^{+}\right) = A$, $f\left(b^{-}\right)=B$. Define a new function:
+    \begin{align*}
+        \tilde{f}(x) = 
+            \begin{cases} 
+            A, & x=a \\
+            f(x), & x\in(a, b) \\
+            B. & x=b  
+            \end{cases}
+    \end{align*}
+    Obviously $\tilde{f}(x)$ is continuous on $\left[a, b\right]$, by \textit{Cantor theorem}, theorem \ref{:thm_5_6_2}, we know $\tilde{f}(x)$ is unformly continuous on $\left[a, b\right]$. Thus, $\tilde{f}(x)$ is uniformly continuous on $\left(a, b\right)$. Therefore, $f\left(x\right)$ is uniformly continuous on $\left(a, b\right)$.
+
+    Necessity $\left(\Rightarrow\right)$ 
+
+    Since $f\left(x\right)$ is uniformly continuous on $(a,b)$, that is $\forall\, \epsilon>0, \uwave{\exists\,\delta>0}, \forall\, x^{\prime}, x^{\prime\prime} \in \left(a, b\right)$, the condition $\left\vert x^{\prime}-x^{\prime\prime}\right\vert< \delta$ implies $\left\vert f\left(x^{\prime}\right)-f\left(x^{\prime\prime}\right)\right\vert<\epsilon$. Now, in $\left(a, b\right)$ choose an \uwave{\textcolor{red}{arbitrary}} \textit{Cauchy sequence}, $\left\{x_{n}\right\}, x_{n} \xrightarrow{n \to \infty} a^{+}$, for the same $\delta >0, \uwave{\exists\, N}, \uwave{\forall\, n, m > N}$ the condition $\left\vert x_{n}-x_{m}\right\vert<\delta$ implies $\uwave{\left\vert f\left(x_{n}\right)-f\left(x_{m}\right)\right\vert<\epsilon}$. So, $\left\{f\left(x_{n}\right)\right\}$ is a \textit{Cauchy sequence} that converges. By \textit{Heine theorem}, theorem \ref{:thm_4_4_1}, $f\left(a^{+}\right)$ exists. Similarly, we can show $f\left(b^{-}\right)$ exists.        
+\end{proof}
+
+\begin{example}{}{exp_5_6_6}
+    Let $f\left(x\right)=\sin\frac{1}{x}$ is continuous on $\left(0, 1\right)$, but NOT uniformly continuous. Because when $x \to 0^{+}$, $f\left(x\right)=\sin\frac{1}{x}$ has no limit.  
+\end{example}
