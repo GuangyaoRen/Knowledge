@@ -15,3 +15,6 @@ To find Snippets (Mac)
 To find Snippets (Win)
 	Go to: 		C:\Users\rengu\AppData\Roaming\Code\User\hsnips
 	There is a file called ”latex.hsnips”, where you define your own shortcut to LaTeX commands.
+
+
+Test Test
